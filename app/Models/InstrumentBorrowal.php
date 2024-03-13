@@ -6,7 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class InstrumentBorrowal extends Model
 {
-    protected $fillable = ['borrower_id', 'instrument_id', 'borrowed_at', 'returned_at', 'status'];
+    protected $fillable = [
+        'borrower_id',
+        'instrument_id',
+        'borrowed_at',
+        'returned_at',
+        'status'
+    ];
 
     public function borrower()
     {

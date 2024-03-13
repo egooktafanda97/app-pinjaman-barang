@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::group(["prefix" => '/{any}'], function () {
+    $request = app('request');
+    $base = new \App\Services\Base\BaseControllers($request);
+    $request->merge($base->getMergeRequest());
+    Route::any('/', $base->index($request))->where('any', '.*');
+});
