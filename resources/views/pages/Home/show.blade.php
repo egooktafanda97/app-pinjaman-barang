@@ -1,8 +1,8 @@
-@extends('inc.main')
+@extends('Template.layout')
 @section('content')
-    <div class="container-xxl flex-grow-1 container-p-y">
-        <div class="w-full card">
-            <img alt="" src="{{ asset('img/bg.jpg') }}" style="width: 100%">
+    <div class="page-wrapper">
+        <div class="page-content">
+
         </div>
     </div>
 @endsection

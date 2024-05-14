@@ -2,22 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\InstrumentBorrowal;
-use App\Services\TraditionalMusicalInstrumentsService;
-use Illuminate\Http\Request;
-use TaliumAbstract\Attributes\Propertis;
-use TaliumAbstract\Attributes\Ruters\Prefix;
-use TaliumAbstract\Attributes\Service;
-use TaliumAbstract\Attributes\StaticMethodRules;
-use TaliumAbstract\Trait\CrudLib;
+use App\Http\Controllers\Controller;
+use Spatie\RouteAttributes\Attributes\Get;
+use Spatie\RouteAttributes\Attributes\Prefix;
 
-#[Prefix("anggota")]
-#[Propertis([
-    "store_redirect" => "/anggota/show"
-])]
-#[StaticMethodRules(InstrumentBorrowal::class)]
-#[Service(TraditionalMusicalInstrumentsService::class)]
+#[Prefix("home")]
 class HomeController extends Controller
 {
-    use CrudLib;
+    #[Get("")]
+    public function index()
+    {
+        return view('pages.home.show');
+    }
 }

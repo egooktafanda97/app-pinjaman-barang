@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('origin'); // Asal alat musik tradisional
             $table->integer('year'); // Tahun pembuatan alat musik tradisional
             $table->string('material'); // Bahan pembuatan alat musik tradisional
+            $table->integer('availability'); // Jumlah ketersediaan alat musik tradisional
             $table->timestamps(); // Waktu pembuatan dan pembaruan catatan
         });
 

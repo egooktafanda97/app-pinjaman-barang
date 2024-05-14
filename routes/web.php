@@ -18,9 +18,9 @@ Route::get('/', function () {
 });
 
 
-Route::group(["prefix" => '/{any}'], function () {
-    $request = app('request');
-    $base = new \App\Services\Base\BaseControllers($request);
-    $request->merge($base->getMergeRequest());
-    Route::any('/', $base->index($request))->where('any', '.*');
-});
+// Route::group(["prefix" => '/{any}'], function () {
+//     $request = app('request');
+//     $base = new \App\Services\Base\BaseControllers($request);
+//     $request->merge($base->getMergeRequest());
+//     Route::any('/', $base->index($request))->where('any', '.*');
+// });
