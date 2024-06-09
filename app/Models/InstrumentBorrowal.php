@@ -11,7 +11,10 @@ class InstrumentBorrowal extends Model
         'instrument_id',
         'borrowed_at',
         'returned_at',
-        'status'
+        'purpose',
+        'qty',
+        'notes',
+        'status',
     ];
 
     public function borrower()
@@ -22,5 +25,11 @@ class InstrumentBorrowal extends Model
     public function instrument()
     {
         return $this->belongsTo(TraditionalMusicalInstrument::class);
+    }
+
+    // pengembalian 
+    public function pengembalianBarang()
+    {
+        return $this->hasOne(PengembalianBarang::class);
     }
 }

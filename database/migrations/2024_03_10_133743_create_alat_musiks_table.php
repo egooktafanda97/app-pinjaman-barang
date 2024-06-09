@@ -15,10 +15,18 @@ return new class extends Migration
             $table->id();
             $table->string('name'); // Nama alat musik tradisional
             $table->string('description'); // Deskripsi tentang alat musik tradisional
+            $table->integer('instrument_categories_id'); // Jenis alat musik tradisional
             $table->string('origin'); // Asal alat musik tradisional
-            $table->integer('year'); // Tahun pembuatan alat musik tradisional
+            $table->string('year', 4); // Tahun pembuatan alat musik tradisional
             $table->string('material'); // Bahan pembuatan alat musik tradisional
             $table->integer('availability'); // Jumlah ketersediaan alat musik tradisional
+            $table->integer('lendable'); // Jumlah alat yang bisa dipinjam
+            $table->integer('broken'); // Jumlah alat yang rusak
+            $table->string("image")->nullable(); // URL gambar alat musik tradisional
+            $table->string('video')->nullable(); // URL video alat musik tradisional
+            $table->string('audio')->nullable(); // URL audio alat musik tradisional
+            $table->text('history')->nullable(); // Sejarah alat musik tradisional
+            $table->text('source')->nullable(); // Sumber informasi tentang alat musik tradisional
             $table->timestamps(); // Waktu pembuatan dan pembaruan catatan
         });
 
@@ -26,23 +34,6 @@ return new class extends Migration
             $table->id();
             $table->string('name'); // Nama kategori alat musik
             $table->string('description')->nullable(); // Deskripsi opsional tentang kategori
-            $table->timestamps(); // Waktu pembuatan dan pembaruan catatan
-        });
-
-        Schema::create('instrument_category_pivot', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('instrument_id'); // ID alat musik tradisional
-            $table->unsignedBigInteger('category_id'); // ID kategori alat musik
-            $table->foreign('instrument_id')->references('id')->on('traditional_musical_instruments')->onDelete('cascade');
-            $table->foreign('category_id')->references('id')->on('instrument_categories')->onDelete('cascade');
-            $table->timestamps(); // Waktu pembuatan dan pembaruan catatan
-        });
-
-        Schema::create('instrument_images', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('instrument_id'); // ID alat musik tradisional
-            $table->string('url'); // URL gambar alat musik
-            $table->foreign('instrument_id')->references('id')->on('traditional_musical_instruments')->onDelete('cascade');
             $table->timestamps(); // Waktu pembuatan dan pembaruan catatan
         });
     }
@@ -54,7 +45,5 @@ return new class extends Migration
     {
         Schema::dropIfExists('traditional_musical_instruments');
         Schema::dropIfExists('instrument_categories');
-        Schema::dropIfExists('instrument_category_pivot');
-        Schema::dropIfExists('instrument_images');
     }
 };

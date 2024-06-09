@@ -2,16 +2,36 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use Spatie\RouteAttributes\Attributes\Get;
-use Spatie\RouteAttributes\Attributes\Prefix;
+use App\Models\InstrumentBorrowal;
+use App\Models\TraditionalMusicalInstrument;
+use Illuminate\Http\Request;
 
-#[Prefix("home")]
 class HomeController extends Controller
 {
-    #[Get("")]
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
     public function index()
     {
-        return view('pages.home.show');
+        $alatmusik = collect(TraditionalMusicalInstrument::all())->map(function ($q) {
+            $cekKetersediaan = InstrumentBorrowal::whereInstrumentId($q->id)
+                ->whereStatus("borrowed")
+                ->sum('qty');
+
+            // jumlah yang boleh dipinjam
+            $cek = TraditionalMusicalInstrument::whereId($q->id)->first()->lendable;
+            $totalTersedia = $cek - $cekKetersediaan;
+            $q->totalTersedia = $totalTersedia;
+            return $q;
+        });
+
+
+
+        return view('home', [
+            "alatmusik" => $alatmusik,
+        ]);
     }
 }

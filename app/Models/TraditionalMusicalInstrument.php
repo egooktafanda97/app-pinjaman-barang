@@ -2,19 +2,36 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class TraditionalMusicalInstrument extends Model
 {
-    protected $fillable = ['name', 'description', 'origin', 'year', 'material'];
+    use HasFactory;
+    // Nama tabel yang terkait dengan model ini
+    protected $table = 'traditional_musical_instruments';
 
-    public function categories()
-    {
-        return $this->belongsToMany(InstrumentCategory::class, 'instrument_category_pivot', 'instrument_id', 'category_id');
-    }
+    // Kolom yang dapat diisi melalui metode mass assignment
+    protected $fillable = [
+        'name',
+        'description',
+        'instrument_categories_id',
+        'origin',
+        'year',
+        'material',
+        'availability',
+        'lendable',
+        'broken',
+        'image',
+        'video',
+        'audio',
+        'history',
+        'source',
+    ];
 
-    public function images()
+    // Relasi ke kategori alat musik tradisional
+    public function category()
     {
-        return $this->hasMany(InstrumentImage::class);
+        return $this->belongsTo(InstrumentCategory::class, 'instrument_categories_id');
     }
 }

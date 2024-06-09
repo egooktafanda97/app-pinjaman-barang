@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index']);
 
 
 // Route::group(["prefix" => '/{any}'], function () {
@@ -24,3 +23,7 @@ Route::get('/', function () {
 //     $request->merge($base->getMergeRequest());
 //     Route::any('/', $base->index($request))->where('any', '.*');
 // });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
