@@ -23,8 +23,9 @@
             <div class="card card-body shadow">
                 <form action="{{ url('alat-musik/store') }}" enctype="multipart/form-data" method="post">
                     @csrf
+                    <input name="types_id" type="hidden" value="{{ $type }}">
                     <div class="flex justify-between w-full mb-2">
-                        <h2 class="text-lg">Tambahkan Data Alat Musik</h2>
+                        <h2 class="text-lg">Tambahkan Data {{ $label ?? 'Alat Musik' }}</h2>
                         <button class="btn btn-primary" type="submit">
                             <i class="fa fa-save ml-1"></i> Simpan
                         </button>
@@ -41,7 +42,8 @@
                                 placeholder="Masukkan deskripsi alat musik" required rows="3"></textarea>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label class="form-label" for="instrument_categories_id">Kategori Alat Musik</label>
+                            <label class="form-label" for="instrument_categories_id">Kategori
+                                {{ $label ?? 'Alat Musik' }}</label>
                             <select class="form-select form-select-sm" id="instrument_categories_id"
                                 name="instrument_categories_id" required>
                                 <option value="">Pilih kategori</option>
@@ -71,12 +73,12 @@
                                 placeholder="Masukkan jumlah ketersediaan" required type="number" value="0">
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label class="form-label" for="availability">Jumlah Alat Bagus</label>
+                            <label class="form-label" for="availability">Jumlah {{ $label ?? 'Alat Musik' }} Bagus</label>
                             <input class="form-control form-control-sm" id="lendable" name="lendable"
                                 placeholder="Masukkan jumlah ketersediaan" required type="number" value="0">
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label class="form-label" for="availability">Jumlah Alat Rusak</label>
+                            <label class="form-label" for="availability">Jumlah {{ $label ?? 'Alat Musik' }} Rusak</label>
                             <input class="form-control form-control-sm" id="broken" name="broken"
                                 placeholder="Masukkan jumlah ketersediaan" required type="number" value="0">
                         </div>
@@ -90,11 +92,13 @@
                             <input class="form-control form-control-sm" id="video" name="video"
                                 placeholder="Masukkan URL video" type="file">
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label" for="audio">Audio</label>
-                            <input class="form-control form-control-sm" id="audio" name="audio"
-                                placeholder="Masukkan URL audio" type="file">
-                        </div>
+                        @if ($type == 1)
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label" for="audio">Audio</label>
+                                <input class="form-control form-control-sm" id="audio" name="audio"
+                                    placeholder="Masukkan URL audio" type="file">
+                            </div>
+                        @endif
                         <div class="col-md-12 mb-3">
                             <label class="form-label" for="history">Sejarah</label>
                             <textarea class="form-control form-control-sm" id="sejarah" id="history" name="history"

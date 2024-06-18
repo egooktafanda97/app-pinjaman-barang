@@ -24,7 +24,15 @@ class PeminjamanController extends Controller
     public function list()
     {
         return view('alat-musik.list', [
-            "alatMusik" => TraditionalMusicalInstrument::all(),
+            "alatMusik" => TraditionalMusicalInstrument::whereTypesId(1)->get(),
+        ]);
+    }
+
+    #[Get(["/pakayan", 'list/pakayan'])]
+    public function listPakayan()
+    {
+        return view('alat-musik.list', [
+            "alatMusik" => TraditionalMusicalInstrument::whereTypesId(2)->get(),
         ]);
     }
 

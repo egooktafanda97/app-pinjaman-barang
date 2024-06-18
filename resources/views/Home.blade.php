@@ -49,8 +49,11 @@
                                 <div class="text-uppercase">Dinas Kebudayaan & Pariwisata</div>
                             </div>
                             <div class="fs-3 fw-light text-muted"></div>
-                            <h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline">Alat Musik
-                                    Tradisional</span></h1>
+                            <h1 class="display-3 fw-bolder mb-5">
+                                <span class="text-gradient d-inline">
+                                    <small style="font-size: .8em">Pakaian Tradisional</small> & Alat Musik Tradisional
+                                </span>
+                            </h1>
                             <div
                                 class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
                                 <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder"
@@ -392,8 +395,10 @@
                 <div class="row gx-5 justify-content-center">
                     <div class="col-xxl-8">
                         <div class="text-center my-5">
-                            <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">Peminjaman Alat Musik
-                                    Tradisonal</span></h2>
+                            <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">
+                                    Peminjaman Pakaian Tradisional
+                                    & Alat Musik Tradisonal
+                                </span></h2>
                             <hr>
                             <p>
                                 Untuk dapat meminjam alatmusik tradisonal anda harus membuat akun terlebih dahulu,

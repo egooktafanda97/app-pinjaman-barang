@@ -11,9 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::create('types', function (Blueprint $table) {
+            $table->id();
+            $table->string('name'); // Nama kategori alat musik
+            $table->string('description')->nullable(); // Deskripsi opsional tentang kategori
+            $table->timestamps(); // Waktu pembuatan dan pembaruan catatan
+        });
+
         Schema::create('traditional_musical_instruments', function (Blueprint $table) {
             $table->id();
             $table->string('name'); // Nama alat musik tradisional
+            $table->unsignedInteger('types_id'); // Jenis alat musik tradisional
             $table->string('description'); // Deskripsi tentang alat musik tradisional
             $table->integer('instrument_categories_id'); // Jenis alat musik tradisional
             $table->string('origin'); // Asal alat musik tradisional
@@ -33,6 +41,7 @@ return new class extends Migration
         Schema::create('instrument_categories', function (Blueprint $table) {
             $table->id();
             $table->string('name'); // Nama kategori alat musik
+            $table->unsignedInteger('types_id'); // Jenis alat musik
             $table->string('description')->nullable(); // Deskripsi opsional tentang kategori
             $table->timestamps(); // Waktu pembuatan dan pembaruan catatan
         });

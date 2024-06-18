@@ -13,6 +13,10 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-folder"></i></div>
                         Alat Musik
                     </a>
+                    <a class="nav-link" href="{{ url('alat-musik/pakayan') }}">
+                        <div class="sb-nav-link-icon"><i class="fas fa-folder"></i></div>
+                        Pakayan Adat
+                    </a>
                     <a class="nav-link" href="{{ url('used/list-permohonan') }}">
                         <div class="sb-nav-link-icon"><i class="fas fa-folder"></i></div>
                         List Permohonan
@@ -41,20 +45,26 @@
                     </a>
                 @endif
 
-                @if (auth()->user()->role == 'peminjam')
+                @if (auth()->user()->role == 'peminjam' || auth()->user()->role == 'users')
                     {{-- pemohon --}}
                     <a class="nav-link" href="{{ url('users-used/profile') }}">
                         <div class="sb-nav-link-icon"><i class="fas fa-folder"></i></div>
                         Profile
                     </a>
-                    <a class="nav-link" href="{{ url('used/list') }}">
-                        <div class="sb-nav-link-icon"><i class="fas fa-folder"></i></div>
-                        List Alatmusik
-                    </a>
-                    <a class="nav-link" href="{{ url('used/list-pengajuan') }}">
-                        <div class="sb-nav-link-icon"><i class="fas fa-folder"></i></div>
-                        List Permohonan
-                    </a>
+                    @if (!empty(\App\Models\Borrower::where('user_id', auth()->user()->id)->first()))
+                        <a class="nav-link" href="{{ url('used/list') }}">
+                            <div class="sb-nav-link-icon"><i class="fas fa-folder"></i></div>
+                            List Alat Musik
+                        </a>
+                        <a class="nav-link" href="{{ url('used/list/pakayan') }}">
+                            <div class="sb-nav-link-icon"><i class="fas fa-folder"></i></div>
+                            List Pakayan Adat
+                        </a>
+                        <a class="nav-link" href="{{ url('used/list-pengajuan') }}">
+                            <div class="sb-nav-link-icon"><i class="fas fa-folder"></i></div>
+                            List Permohonan
+                        </a>
+                    @endif
                 @endif
                 {{-- logout --}}
                 <a class="nav-link" href="{{ route('logout') }}" id="logout-link"

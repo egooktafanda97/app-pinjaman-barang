@@ -9,5 +9,5 @@ class InstrumentCategory extends Model
 {
     use HasFactory;
     protected $table = 'instrument_categories';
-    protected $fillable = ['name', 'description'];
+    protected $fillable = ['name', 'types_id', 'description'];
 }

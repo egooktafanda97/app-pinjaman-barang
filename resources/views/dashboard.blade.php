@@ -24,7 +24,9 @@
                             {{ $jumlah_alat }}
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
-                            <a class="small text-white stretched-link" href="#">Jumlah Alat Musik</a>
+                            <a class="small text-white stretched-link" href="#">
+                                Jumlah Pakaian Tradisional & Alat Musik
+                            </a>
                             <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                         </div>
                     </div>

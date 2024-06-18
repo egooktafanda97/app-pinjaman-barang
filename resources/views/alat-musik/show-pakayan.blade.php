@@ -4,7 +4,7 @@
     <div class="container">
         <div class="w-full p-2">
             <div class="flex justify-between w-full mb-2">
-                <h2 class="text-lg">Alat Musik</h2>
+                <h2 class="text-lg">{{ $label ?? '' }}</h2>
                 <a class="btn btn-primary" href="{{ url('alat-musik/create/' . $segement) }}">
                     <i class="fa fa-plus mr-1"></i> Tambah
                 </a>
@@ -13,10 +13,9 @@
                 <table id="datatablesSimple">
                     <thead>
                         <tr>
-                            <th>Nama Alatmusik</th>
+                            <th>Nama Nama Pakayan</th>
                             <th>Deskripsi</th>
-                            <th>Kategori</th>
-                            <th>Asal</th>
+                            <th>Pakayan</th>
                             <th>Tahun</th>
                             <th>Bahan</th>
                             <th>#</th>
@@ -24,10 +23,9 @@
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>Nama Alatmusik</th>
+                            <th>Nama Nama Pakayan</th>
                             <th>Deskripsi</th>
-                            <th>Kategori</th>
-                            <th>Asal</th>
+                            <th>Pakayan</th>
                             <th>Tahun</th>
                             <th>Bahan</th>
                             <th>#</th>
@@ -38,11 +36,9 @@
                             <tr>
                                 <td>{{ $item->name }}</td>
                                 <td>{{ $item->description }}</td>
-                                <td>{{ $item->category->name ?? '' }}</td>
                                 <td>{{ $item->origin }}</td>
                                 <td>{{ $item->year }}</td>
                                 <td>{{ $item->material }}</td>
-
                                 <td>
                                     <div class="flex item-center">
                                         <a class="btn btn-info btn-sm" href="{{ url('alat-musik/' . $item->id) }}">

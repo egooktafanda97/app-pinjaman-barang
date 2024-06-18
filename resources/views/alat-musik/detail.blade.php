@@ -4,7 +4,8 @@
     <div class="container">
         <div class="w-full p-2">
             <div class="flex justify-between w-full mb-2">
-                <h2 class="text-lg">Alat Musik {{ $alatMusik->name }}</h2>
+                <h2 class="text-lg">{{ $alatMusik->type_id == 1 ? 'Alat Musik' : 'Pakayan Adat' }} {{ $alatMusik->name }}
+                </h2>
             </div>
             <div class="card card-body shadow">
                 <div class="row">
@@ -22,12 +23,14 @@
                             </video>
                         </div>
                         {{-- show audio --}}
-                        <div class="shadow rounded-md w-full mb-3">
-                            <audio class="w-full" controls>
-                                <source src="{{ asset('uploaded/' . $alatMusik->audio) }}" type="audio/mpeg">
-                                Your browser does not support the audio tag.
-                            </audio>
-                        </div>
+                        @if ($alatMusik->type_id == 1)
+                            <div class="shadow rounded-md w-full mb-3">
+                                <audio class="w-full" controls>
+                                    <source src="{{ asset('uploaded/' . $alatMusik->audio) }}" type="audio/mpeg">
+                                    Your browser does not support the audio tag.
+                                </audio>
+                            </div>
+                        @endif
                     </div>
                     <div class="col-md-8">
                         <div class="w-full">

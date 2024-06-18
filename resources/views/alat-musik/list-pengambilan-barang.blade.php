@@ -4,14 +4,15 @@
     <div class="container">
         <div class="w-full p-2">
             <div class="flex justify-between w-full mb-2">
-                <h2 class="text-lg">Permohonan Peminjaman Alatmusik</h2>
+                <h2 class="text-lg">Permohonan Peminjaman</h2>
             </div>
             <div class="card card-body shadow">
                 <table id="datatablesSimple">
                     <thead>
                         <tr>
                             <th>Nama Pemohon</th>
-                            <th>Nama Alatmusik</th>
+                            <th>Nama</th>
+                            <th>Jenis</th>
                             <th>Kategori</th>
                             <th>Jumlah Diajukan</th>
                             <th>Staus Permohonan</th>
@@ -22,7 +23,8 @@
                         <tr>
                             <th>No</th>
                             <th>Nama Pemohon</th>
-                            <th>Nama Alatmusik</th>
+                            <th>Nama</th>
+                            <th>Jenis</th>
                             <th>Kategori</th>
                             <th>Jumlah Diajukan</th>
                             <th>Tanggal pengajuan</th>
@@ -36,6 +38,7 @@
                             <tr>
                                 <td>{{ $item->borrower->name }}</td>
                                 <td>{{ $item->instrument->name }}</td>
+                                <td>{{ $item->type_id == 1 ? 'Alat Musik' : 'Pakayan Adat' }}</td>
                                 <td>{{ $item->instrument->category->name }}</td>
                                 <td>{{ $item->qty }}</td>
                                 <td class="">
@@ -98,8 +101,8 @@
 @push('script')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="
-                                            https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.all.min.js
-                                            "></script>
+                                                                        https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.all.min.js
+                                                                        "></script>
     <link href="
     https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.min.css
     " rel="stylesheet">

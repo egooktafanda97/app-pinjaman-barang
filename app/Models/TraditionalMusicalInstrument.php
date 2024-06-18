@@ -14,6 +14,7 @@ class TraditionalMusicalInstrument extends Model
     // Kolom yang dapat diisi melalui metode mass assignment
     protected $fillable = [
         'name',
+        'types_id',
         'description',
         'instrument_categories_id',
         'origin',
@@ -28,6 +29,13 @@ class TraditionalMusicalInstrument extends Model
         'history',
         'source',
     ];
+
+
+    // types
+    public function types()
+    {
+        return $this->belongsTo(TypesTradisonal::class, 'types_id');
+    }
 
     // Relasi ke kategori alat musik tradisional
     public function category()
