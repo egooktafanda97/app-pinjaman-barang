@@ -4,7 +4,7 @@
     <div class="container">
         <div class="w-full p-2">
             <div class="flex justify-between w-full mb-2">
-                <h2 class="text-lg">From Pengajuan Peminjaman {{ $alatMusik->type_id == 1 ? 'Alat Musik' : 'Pakayan Adat' }}
+                <h2 class="text-lg">From Pengajuan Peminjaman {{ $alatMusik->types_id == 1 ? 'Alat Musik' : 'Pakaian Adat' }}
                 </h2>
             </div>
             <div class="card card-body shadow">
@@ -82,7 +82,8 @@
                                         type="text" value="{{ $brorrower->name }}">
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label font-bold" for="">Alat Musik</label>
+                                    <label class="form-label font-bold"
+                                        for="">{{ $alatMusik->types_id == 1 ? 'Alat Musik' : 'Pakaian Adat' }}</label>
                                     <input class="form-control form-control-sm" id="" disabled type="text""
                                         value="{{ $alatMusik->name }}">
                                 </div>

@@ -4,7 +4,7 @@
     <div class="container">
         <div class="w-full p-2">
             <div class="flex justify-between w-full mb-2">
-                <h2 class="text-lg">List Alat Musik</h2>
+                <h2 class="text-lg">List</h2>
             </div>
             <div class="card card-body shadow">
                 {{-- card list img alatmusik --}}
@@ -19,7 +19,7 @@
                                             href="{{ url("alat-musik/$item->id") }}">{{ $item->name }}</a></h5>
                                     {{-- button detail --}}
                                     {{-- jumlah tersedia --}}
-                                    <p class="card-text">Jumlah Tersedia: {{ $item->stock }}</p>
+                                    {{-- <p class="card-text">Jumlah Tersedia: {{ $item->stock }}</p> --}}
                                     {{-- harga --}}
                                     <hr class="mt-2 mb-2">
                                     <a class="btn btn-primary btn-sm w-100"

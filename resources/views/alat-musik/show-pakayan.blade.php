@@ -13,9 +13,9 @@
                 <table id="datatablesSimple">
                     <thead>
                         <tr>
-                            <th>Nama Nama Pakayan</th>
+                            <th>Nama Nama pakaian</th>
                             <th>Deskripsi</th>
-                            <th>Pakayan</th>
+                            <th>pakaian</th>
                             <th>Tahun</th>
                             <th>Bahan</th>
                             <th>#</th>
@@ -23,9 +23,9 @@
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>Nama Nama Pakayan</th>
+                            <th>Nama Nama pakaian</th>
                             <th>Deskripsi</th>
-                            <th>Pakayan</th>
+                            <th>pakaian</th>
                             <th>Tahun</th>
                             <th>Bahan</th>
                             <th>#</th>
@@ -45,7 +45,7 @@
                                             <i class="fa fa-eye"></i>
                                         </a>
                                         <a class="btn btn-warning btn-sm"
-                                            href="{{ url('alat-musik/' . $item->id . '/edit' . ($segement != null ? '/pakayan' : '')) }}">
+                                            href="{{ url('alat-musik/' . $item->id . '/edit' . ($segement != null ? '/pakaian' : '')) }}">
                                             <i class="fa fa-edit"></i>
                                         </a>
                                         <a class="btn btn-danger btn-sm"

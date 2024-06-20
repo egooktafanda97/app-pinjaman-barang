@@ -38,7 +38,7 @@
                             <tr>
                                 <td>{{ $item->borrower->name }}</td>
                                 <td>{{ $item->instrument->name }}</td>
-                                <td>{{ $item->type_id == 1 ? 'Alat Musik' : 'Pakayan Adat' }}</td>
+                                <td>{{ $item->type_id == 1 ? 'Alat Musik' : 'Pakaian Adat' }}</td>
                                 <td>{{ $item->instrument->category->name }}</td>
                                 <td>{{ $item->qty }}</td>
                                 <td class="">
@@ -101,8 +101,8 @@
 @push('script')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="
-                                                                        https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.all.min.js
-                                                                        "></script>
+                                                                                https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.all.min.js
+                                                                                "></script>
     <link href="
     https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.min.css
     " rel="stylesheet">

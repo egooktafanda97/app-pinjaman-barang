@@ -4,7 +4,7 @@
     <div class="container">
         <div class="w-full p-2">
             <div class="flex justify-between w-full mb-2">
-                <h2 class="text-lg">{{ $alatMusik->type_id == 1 ? 'Alat Musik' : 'Pakayan Adat' }} {{ $alatMusik->name }}
+                <h2 class="text-lg">{{ $alatMusik->type_id == 1 ? 'Alat Musik' : 'Pakaian Adat' }} {{ $alatMusik->name }}
                 </h2>
             </div>
             <div class="card card-body shadow">

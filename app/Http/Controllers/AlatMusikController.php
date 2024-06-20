@@ -30,26 +30,26 @@ class AlatMusikController extends Controller
         ]);
     }
 
-    #[Get('/pakayan')]
-    public function pakayan()
+    #[Get('/pakaian')]
+    public function pakaian()
     {
         return view('alat-musik.show-pakayan', [
-            "label" => "Pakayan Adat",
-            "segement" => "pakayan",
+            "label" => "Pakaian Adat",
+            "segement" => "pakaian",
             "alatMusik" => TraditionalMusicalInstrument::whereTypesId(2)->get(),
         ]);
     }
 
 
-    #[Get('/create/{pakayan?}')]
-    public function create($pakayan = null)
+    #[Get('/create/{pakaian?}')]
+    public function create($pakaian = null)
     {
         return view('alat-musik.create', [
-            "type" => $pakayan ? 2 : 1,
-            "segement" => $pakayan,
-            "label" => $pakayan ? "Pakayan Adat" : "Alat Musik",
-            "kategory" => InstrumentCategory::where(function ($q) use ($pakayan) {
-                if ($pakayan) {
+            "type" => $pakaian ? 2 : 1,
+            "segement" => $pakaian,
+            "label" => $pakaian ? "Pakaian Adat" : "Alat Musik",
+            "kategory" => InstrumentCategory::where(function ($q) use ($pakaian) {
+                if ($pakaian) {
                     return $q->whereTypesId(2);
                 } else {
                     return  $q->whereTypesId(1);
@@ -80,7 +80,7 @@ class AlatMusikController extends Controller
             if ($request->type_id == 1) {
                 return redirect()->route('alat-musik');
             } else {
-                return redirect("alat-musik/pakayan");
+                return redirect("alat-musik/pakaian");
             }
         } catch (\Throwable $th) {
             Alert::error('Gagal', 'Data Gagal Disimpan');
@@ -115,14 +115,14 @@ class AlatMusikController extends Controller
         ]);
     }
 
-    #[Get('/{id}/edit/pakayan')]
-    public function editPakayan($id)
+    #[Get('/{id}/edit/pakaian')]
+    public function editpakaian($id)
     {
         return view('alat-musik.edit', [
             'id' => $id,
             "type" => 2,
-            "segement" => "pakayan",
-            "label" => "Pakayan Adat",
+            "segement" => "pakaian",
+            "label" => "Pakaian Adat",
             "alatMusik" => TraditionalMusicalInstrument::whereId($id)->first(),
             "kategory" => InstrumentCategory::whereTypesId(2)->get(),
         ]);
