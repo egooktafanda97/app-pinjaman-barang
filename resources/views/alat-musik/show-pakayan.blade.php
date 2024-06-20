@@ -13,7 +13,7 @@
                 <table id="datatablesSimple">
                     <thead>
                         <tr>
-                            <th>Nama Nama Pakayan</th>
+                            <th>Nama Pakaian</th>
                             <th>Deskripsi</th>
                             <th>Pakayan</th>
                             <th>Tahun</th>
@@ -23,7 +23,7 @@
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>Nama Nama Pakayan</th>
+                            <th>Nama Pakaian</th>
                             <th>Deskripsi</th>
                             <th>Pakayan</th>
                             <th>Tahun</th>

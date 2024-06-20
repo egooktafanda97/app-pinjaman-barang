@@ -91,18 +91,18 @@
     <div class="kop-surat">
         <div class="kop-teks">
             <h3 style="margin: 0px;">DINAS KEBUDAYAAN DAN PARIWISATA</h3>
-            <h4 style="margin: 0px;">Kabupaten Kuatan Singingi</h4>
+            <h4 style="margin: 0px;">KABUPATEN KUANTAN SINGINGI</h4>
 
         </div>
     </div>
     <hr>
 
-    <h4>Laporan Peminjaman Alat Musik Tradisional</h4>
+    <h4>Laporan Peminjaman Peralatan Tradisional</h4>
     <table id="datatablesSimple">
         <thead>
             <tr>
                 <th>Nama Pemohon</th>
-                <th>Nama Alatmusik</th>
+                <th>Nama Peralatan</th>
                 <th>Kategori</th>
                 <th>Jumlah Diajukan</th>
                 <th>Tanggal pengajuan</th>

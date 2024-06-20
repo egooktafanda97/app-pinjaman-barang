@@ -5,7 +5,7 @@
         <div class="w-full p-2">
             <div class="flex justify-between w-full mb-2">
                 <h2 class="text-lg">
-                    Pengambilan alatmusik yang sudah disetujui
+                    Pengambilan alat musik yang sudah disetujui
                 </h2>
             </div>
             <div class="card card-body shadow">

@@ -3,7 +3,7 @@
         <div class="sb-sidenav-menu">
             <div class="nav">
                 <div class="sb-sidenav-menu-heading">Core</div>
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="{{url('dashboard')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Dashboard
                 </a>
@@ -15,7 +15,7 @@
                     </a>
                     <a class="nav-link" href="{{ url('alat-musik/pakayan') }}">
                         <div class="sb-nav-link-icon"><i class="fas fa-folder"></i></div>
-                        Pakayan Adat
+                        Pakaian Adat
                     </a>
                     <a class="nav-link" href="{{ url('used/list-permohonan') }}">
                         <div class="sb-nav-link-icon"><i class="fas fa-folder"></i></div>

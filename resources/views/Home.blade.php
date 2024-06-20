@@ -27,7 +27,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
             <div class="container px-5">
                 <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">
-                        Dinas Kebudayaan & Pariwisata
+                        Dinas Kebudayaan dan Pariwisata
                     </span></a>
                 <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
                     class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse"
@@ -46,7 +46,7 @@
                         <!-- Header text content-->
                         <div class="text-center text-xxl-start">
                             <div class="badge bg-gradient-primary-to-secondary text-white mb-4">
-                                <div class="text-uppercase">Dinas Kebudayaan & Pariwisata</div>
+                                <div class="text-uppercase">Dinas Kebudayaan Dan Pariwisata</div>
                             </div>
                             <div class="fs-3 fw-light text-muted"></div>
                             <h1 class="display-3 fw-bolder mb-5">
@@ -68,7 +68,7 @@
                                 <!-- TIP: For best results, use a photo with a transparent background like the demo example below-->
                                 <!-- Watch a tutorial on how to do this on YouTube (link)-->
                                 <img alt="..." class="profile-img"
-                                    src="https://asset-2.tstatic.net/tribunpekanbaruwiki/foto/bank/images/logo-atau-lambang-kabupaten-kuantan-singingi.jpg"
+                                    src="{{asset('img/bg1.jpg')}}"
                                     style="width: 500px; height: auto;" />
                                 <div class="dots-1">
                                     <!-- SVG Dots-->
@@ -418,7 +418,7 @@
         <div class="container px-5">
             <div class="row align-items-center justify-content-between flex-column flex-sm-row">
                 <div class="col-auto">
-                    <div class="small m-0">Copyright &copy; Your Website 2023</div>
+                    <div class="small m-0">Copyright &copy; Dinas Kebudayaan dan Pariwisata Kuansing 2024</div>
                 </div>
                 <div class="col-auto">
                     <a class="small" href="#!">Privacy</a>

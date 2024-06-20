@@ -34,12 +34,12 @@
                         <div class="col-md-6 mb-3">
                             <label class="form-label" for="name">Nama</label>
                             <input class="form-control form-control-sm" id="name" name="name"
-                                placeholder="Masukkan nama alat musik" required type="text">
+                                placeholder="Masukkan nama peralatan" required type="text">
                         </div>
                         <div class="col-md-6 mb-3">
                             <label class="form-label" for="description">Deskripsi</label>
                             <textarea class="form-control form-control-sm" id="description" name="description"
-                                placeholder="Masukkan deskripsi alat musik" required rows="3"></textarea>
+                                placeholder="Masukkan deskripsi peralatan" required rows="3"></textarea>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label class="form-label" for="instrument_categories_id">Kategori
@@ -55,7 +55,7 @@
                         <div class="col-md-6 mb-3">
                             <label class="form-label" for="origin">Asal</label>
                             <input class="form-control form-control-sm" id="origin" name="origin"
-                                placeholder="Masukkan asal alat musik" required type="text">
+                                placeholder="Masukkan asal peralatan" required type="text">
                         </div>
                         <div class="col-md-6 mb-3">
                             <label class="form-label" for="year">Tahun</label>
