@@ -28,8 +28,8 @@ class PeminjamanController extends Controller
         ]);
     }
 
-    #[Get(["/pakayan", 'list/pakayan'])]
-    public function listPakayan()
+    #[Get(["/pakaian", 'list/pakaian'])]
+    public function listpakaian()
     {
         return view('alat-musik.list', [
             "alatMusik" => TraditionalMusicalInstrument::whereTypesId(2)->get(),

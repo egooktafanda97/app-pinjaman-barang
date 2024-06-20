@@ -38,7 +38,7 @@
                             <tr>
                                 <td>
                                     <a class="text-blue-500"
-                                        href="{{ url('user-used/profile') }}">{{ $item->borrower->name }}</a>
+                                        href="{{ url('users-used/profile/' . $item->borrower->user_id) }}">{{ $item->borrower->name }}</a>
                                 </td>
                                 <td>{{ $item->instrument->name }}</td>
                                 <td>{{ $item->instrument->category->name }}</td>

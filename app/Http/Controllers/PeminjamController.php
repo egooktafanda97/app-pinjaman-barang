@@ -49,6 +49,15 @@ class PeminjamController extends Controller
         ]);
     }
 
+    #[Get('/profile/{id}')]
+    #[Group(middleware: ['auth'])]
+    public function profileId($id)
+    {
+        return view('peminjam.profile', [
+            'borrower' => Borrower::where('user_id', $id)->first(),
+        ]);
+    }
+
     #[Post('/profile/store')]
     public function profileStore(Request $request)
     {

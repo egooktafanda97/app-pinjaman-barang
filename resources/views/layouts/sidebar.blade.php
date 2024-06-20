@@ -13,7 +13,7 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-folder"></i></div>
                         Alat Musik
                     </a>
-                    <a class="nav-link" href="{{ url('alat-musik/pakayan') }}">
+                    <a class="nav-link" href="{{ url('alat-musik/pakaian') }}">
                         <div class="sb-nav-link-icon"><i class="fas fa-folder"></i></div>
                         Pakaian Adat
                     </a>
@@ -56,9 +56,9 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-folder"></i></div>
                             List Alat Musik
                         </a>
-                        <a class="nav-link" href="{{ url('used/list/pakayan') }}">
+                        <a class="nav-link" href="{{ url('used/list/pakaian') }}">
                             <div class="sb-nav-link-icon"><i class="fas fa-folder"></i></div>
-                            List Pakayan Adat
+                            List pakaian Adat
                         </a>
                         <a class="nav-link" href="{{ url('used/list-pengajuan') }}">
                             <div class="sb-nav-link-icon"><i class="fas fa-folder"></i></div>
