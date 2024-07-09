@@ -66,6 +66,7 @@ class AlatMusikController extends Controller
             $img = Helper::Images($request, 'image', 'uploaded');
             $vidio = Helper::Images($request, 'video', 'uploaded');
             $audio = Helper::Images($request, 'audio', 'uploaded');
+            
 
             unset($xdata['video']);
             unset($xdata['image']);

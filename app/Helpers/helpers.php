@@ -12,7 +12,7 @@ class Helper
             if ($request->hasFile($nameFile)) {
                 $image = $request->file($nameFile);
                 $image_name = Str::random() . time() . '.' . $image->getClientOriginalExtension();
-                $destinationPath = public_path($path);
+                $destinationPath = base_path().'/../'.$path;//public_path($path);
                 $image->move($destinationPath, $image_name);
                 return (object)["status" => true, "msg" => "success", "name" => $image_name, "full-path" => $path . "/" . $image_name];
             } else {

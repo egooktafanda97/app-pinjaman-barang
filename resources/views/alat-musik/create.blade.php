@@ -45,7 +45,7 @@
                             <label class="form-label" for="instrument_categories_id">Kategori
                                 {{ $label ?? 'Alat Musik' }}</label>
                             <select class="form-select form-select-sm" id="instrument_categories_id"
-                                name="instrument_categories_id" required>
+                                name="instrument_categories_id" >
                                 <option value="">Pilih kategori</option>
                                 @foreach ($kategory as $item)
                                     <option value="{{ $item->id }}">{{ $item->name }}</option>
