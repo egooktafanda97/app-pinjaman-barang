@@ -24,12 +24,21 @@
                 <form action="{{ url('alat-musik/' . $alatMusik->id . '/update') }}" enctype="multipart/form-data"
                     method="post">
                     @csrf
-                    <div class="flex justify-between w-full mb-2">
+
+                    {{-- <div class="flex justify-between w-full mb-2">
                         <h2 class="text-lg">Edit Data Alat Musik</h2>
                         <button class="btn btn-primary" type="submit">
                             <i class="fa fa-save ml-1"></i> Simpan
                         </button>
+                    </div> --}}
+                    <input name="types_id" type="hidden" value="{{ $type }}">
+                    <div class="flex justify-between w-full mb-2">
+                        <h2 class="text-lg">Edit Data {{ $label ?? 'Alat Musik' }}</h2>
+                        <button class="btn btn-primary" type="submit">
+                            <i class="fa fa-save ml-1"></i> Simpan
+                        </button>
                     </div>
+
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label class="form-label" for="name">Nama</label>
@@ -108,15 +117,19 @@
                                     width="100"></video>
                             @endif
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label" for="audio">Audio</label>
-                            <input class="form-control form-control-sm" id="audio" name="audio"
-                                placeholder="Masukkan URL audio" type="file">
-                            @if ($alatMusik->audio)
-                                <audio class="mt-2" controls
-                                    src="{{ asset('uploaded/' . $alatMusik->audio) }}"></audio>
-                            @endif
-                        </div>
+                        @if ($type == 1)
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label" for="audio">Audio</label>
+                                <input class="form-control form-control-sm" id="audio" name="audio"
+                                    placeholder="Masukkan URL audio" type="file">
+                                @if ($alatMusik->audio)
+                                    <audio class="mt-2" controls
+                                        src="{{ asset('uploaded/' . $alatMusik->audio) }}"></audio>
+                                @endif
+                            </div>
+                        @endif
+
+
                         <div class="col-md-12 mb-3">
                             <label class="form-label" for="history">Sejarah</label>
                             <textarea class="form-control form-control-sm" id="sejarah" name="history"

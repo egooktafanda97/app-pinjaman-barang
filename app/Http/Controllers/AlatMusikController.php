@@ -11,6 +11,7 @@ use App\Models\TraditionalMusicalInstrument;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 use TaliumAttributes\Collection\Controller\Controllers;
+use TaliumAttributes\Collection\Rutes\Delete;
 use TaliumAttributes\Collection\Rutes\Get;
 use TaliumAttributes\Collection\Rutes\Group;
 use TaliumAttributes\Collection\Rutes\Post;
@@ -162,6 +163,50 @@ class AlatMusikController extends Controller
         } catch (\Throwable $th) {
             Alert::error('Gagal', 'Data Gagal Dihapus');
             return redirect("/alat-musik");
+        }
+    }
+
+    #[Get('/kategory/{type}/create/{id?}')]
+    public function createCategory($typeId)
+    {
+        return  view('alat-musik.create-kategory', [
+            "types_id" => $typeId,
+            "kategory" => InstrumentCategory::where("types_id", $typeId)->get(),
+        ]);
+    }
+
+    #[Post('/store-kategory')]
+    public function storeCategory(Request $request)
+    {
+        try {
+            $data = $request->all();
+            unset($data['_token']);
+            if ($request->id) {
+                $save = InstrumentCategory::whereId($request->id)->update($data);
+                Alert::success("Berhasil", "Data Berhasil Diubah");
+                return redirect("/alat-musik/kategory/1/create");
+            } else {
+                $save = InstrumentCategory::create($data);
+                Alert::success("Berhasil", "Data Berhasil Disimpan");
+                return redirect("/alat-musik/kategory/1/create");
+            }
+        } catch (\Throwable $th) {
+            Alert::error('Gagal', 'Data Gagal Disimpan');
+            return redirect("/alat-musik/kategory/1/create");
+        }
+    }
+
+    // destory
+    #[Delete('/destroy-kategory/{id}')]
+    public function destroyCategory($id)
+    {
+        try {
+            InstrumentCategory::whereId($id)->delete();
+            Alert::success("Berhasil", "Data Berhasil Dihapus");
+            return redirect("/alat-musik/kategory/1/create");
+        } catch (\Throwable $th) {
+            Alert::error('Gagal', 'Data Gagal Dihapus');
+            return redirect("/alat-musik/kategory/1/create");
         }
     }
 }
