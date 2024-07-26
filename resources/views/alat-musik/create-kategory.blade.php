@@ -4,7 +4,7 @@
     <div class="container">
         <div class="w-full p-2">
             <div class="flex justify-between w-full mb-2">
-                <h2 class="text-lg">List Kategory</h2>
+                <h2 class="text-lg">List Kategori</h2>
                 <button class="btn btn-primary" data-bs-target="#exampleModal" data-bs-toggle="modal" type="button">
                     <i class="fa fa-plus ml-1"></i> Tambah
                 </button>

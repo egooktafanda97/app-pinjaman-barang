@@ -17,6 +17,14 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-folder"></i></div>
                         Pakaian Adat
                     </a>
+                    <a class="nav-link" href="{{ url('alat-musik/kategory/1/create') }}">
+                        <div class="sb-nav-link-icon"><i class="fas fa-folder"></i></div>
+                        Kategori Alat Musik
+                    </a>
+                    <a class="nav-link" href="{{ url('alat-musik/kategory/2/create') }}">
+                        <div class="sb-nav-link-icon"><i class="fas fa-folder"></i></div>
+                        Kategori Pakaian Adat
+                    </a>
                     <a class="nav-link" href="{{ url('used/list-permohonan') }}">
                         <div class="sb-nav-link-icon"><i class="fas fa-folder"></i></div>
                         List Permohonan

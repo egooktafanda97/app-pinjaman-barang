@@ -31,7 +31,7 @@
                             <i class="fa fa-save ml-1"></i> Simpan
                         </button>
                     </div> --}}
-                    <input name="types_id" type="hidden" value="{{ $type }}">
+                    <input name="types_id" type="hidden" value="{{ $type ?? 1 }}">
                     <div class="flex justify-between w-full mb-2">
                         <h2 class="text-lg">Edit Data {{ $label ?? 'Alat Musik' }}</h2>
                         <button class="btn btn-primary" type="submit">

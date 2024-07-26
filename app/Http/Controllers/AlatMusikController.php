@@ -112,6 +112,7 @@ class AlatMusikController extends Controller
     {
         return view('alat-musik.edit', [
             'id' => $id,
+            'type' => 1,
             "alatMusik" => TraditionalMusicalInstrument::whereId($id)->first(),
             "kategory" => InstrumentCategory::whereTypesId(1)->get(),
         ]);
@@ -185,15 +186,15 @@ class AlatMusikController extends Controller
             if ($request->id) {
                 $save = InstrumentCategory::whereId($request->id)->update($data);
                 Alert::success("Berhasil", "Data Berhasil Diubah");
-                return redirect("/alat-musik/kategory/1/create");
+                return redirect("/alat-musik/kategory/".$request->types_id."/create");
             } else {
                 $save = InstrumentCategory::create($data);
                 Alert::success("Berhasil", "Data Berhasil Disimpan");
-                return redirect("/alat-musik/kategory/1/create");
+                return redirect("/alat-musik/kategory/".$request->types_id."/create");
             }
         } catch (\Throwable $th) {
             Alert::error('Gagal', 'Data Gagal Disimpan');
-            return redirect("/alat-musik/kategory/1/create");
+            return redirect("/alat-musik/kategory/".$request->types_id."/create");
         }
     }
 
@@ -202,12 +203,13 @@ class AlatMusikController extends Controller
     public function destroyCategory($id)
     {
         try {
+            $data  = InstrumentCategory::find($id);
             InstrumentCategory::whereId($id)->delete();
             Alert::success("Berhasil", "Data Berhasil Dihapus");
-            return redirect("/alat-musik/kategory/1/create");
+            return redirect("/alat-musik/kategory/".$data->types_id."/create");
         } catch (\Throwable $th) {
             Alert::error('Gagal', 'Data Gagal Dihapus');
-            return redirect("/alat-musik/kategory/1/create");
+            return redirect("/alat-musik/kategory/".$data->types_id."/create");
         }
     }
 }

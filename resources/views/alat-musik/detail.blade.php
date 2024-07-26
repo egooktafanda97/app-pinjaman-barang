@@ -23,7 +23,7 @@
                             </video>
                         </div>
                         {{-- show audio --}}
-                        @if ($alatMusik->type_id == 1)
+                        @if ($alatMusik->types_id == 1)
                             <div class="shadow rounded-md w-full mb-3">
                                 <audio class="w-full" controls>
                                     <source src="{{ asset('uploaded/' . $alatMusik->audio) }}" type="audio/mpeg">

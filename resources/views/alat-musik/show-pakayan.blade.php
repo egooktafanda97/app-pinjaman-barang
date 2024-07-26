@@ -23,11 +23,7 @@
                     </thead>
                     <tfoot>
                         <tr>
-<<<<<<< HEAD
                             <th>Nama Pakaian</th>
-=======
-                            <th>Nama Nama pakaian</th>
->>>>>>> 0e9b9895f87202fac0d0cce65266c9864675fb54
                             <th>Deskripsi</th>
                             <th>pakaian</th>
                             <th>Tahun</th>
