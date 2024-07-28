@@ -42,17 +42,17 @@
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label class="form-label" for="name">Nama</label>
-                            <input class="form-control form-control-sm" id="name" name="name"
-                                placeholder="Masukkan nama alat musik" required type="text"
-                                value="{{ $alatMusik->name }}">
+                            <input class="form-control form-control-sm" id="name" name="name" placeholder=""
+                                required type="text" value="{{ $alatMusik->name }}">
                         </div>
                         <div class="col-md-6 mb-3">
                             <label class="form-label" for="description">Deskripsi</label>
-                            <textarea class="form-control form-control-sm" id="description" name="description"
-                                placeholder="Masukkan deskripsi alat musik" required rows="3">{{ $alatMusik->description }}</textarea>
+                            <textarea class="form-control form-control-sm" id="description" name="description" placeholder="" required
+                                rows="3">{{ $alatMusik->description }}</textarea>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label class="form-label" for="instrument_categories_id">Kategori Alat Musik</label>
+                            <label class="form-label" for="instrument_categories_id">Kategori
+                                {{ $label ?? 'Alat Musik' }}</label>
                             <select class="form-select form-select-sm" id="instrument_categories_id"
                                 name="instrument_categories_id" required>
                                 <option value="">Pilih kategori</option>
@@ -64,9 +64,8 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label class="form-label" for="origin">Asal</label>
-                            <input class="form-control form-control-sm" id="origin" name="origin"
-                                placeholder="Masukkan asal alat musik" required type="text"
-                                value="{{ $alatMusik->origin }}">
+                            <input class="form-control form-control-sm" id="origin" name="origin" placeholder=""
+                                required type="text" value="{{ $alatMusik->origin }}">
                         </div>
                         <div class="col-md-6 mb-3">
                             <label class="form-label" for="year">Tahun</label>
@@ -87,13 +86,13 @@
                                 value="{{ $alatMusik->availability }}">
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label class="form-label" for="availability">Jumlah Alat Bagus</label>
+                            <label class="form-label" for="availability">Jumlah {{ $label ?? 'Alat Musik' }} Bagus</label>
                             <input class="form-control form-control-sm" id="lendable" name="lendable"
                                 placeholder="Masukkan jumlah ketersediaan bagus" required type="number"
                                 value="{{ $alatMusik->lendable }}">
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label class="form-label" for="availability">Jumlah Alat Rusak</label>
+                            <label class="form-label" for="availability">Jumlah {{ $label ?? 'Alat Musik' }} Rusak</label>
                             <input class="form-control form-control-sm" id="broken" name="broken"
                                 placeholder="Masukkan jumlah ketersediaan rusak" required type="number"
                                 value="{{ $alatMusik->broken }}">
@@ -132,8 +131,7 @@
 
                         <div class="col-md-12 mb-3">
                             <label class="form-label" for="history">Sejarah</label>
-                            <textarea class="form-control form-control-sm" id="sejarah" name="history"
-                                placeholder="Masukkan sejarah alat musik" rows="3"></textarea>
+                            <textarea class="form-control form-control-sm" id="sejarah" name="history" placeholder="" rows="3"></textarea>
                         </div>
                         <div class="col-md-12 mb-3">
                             <label class="form-label" for="source">Sumber</label>

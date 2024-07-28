@@ -3,28 +3,40 @@
         <div class="sb-sidenav-menu">
             <div class="nav">
                 <div class="sb-sidenav-menu-heading">Core</div>
-                <a class="nav-link" href="{{url('dashboard')}}">
+                <a class="nav-link" href="{{ url('dashboard') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Dashboard
                 </a>
                 <div class="sb-sidenav-menu-heading">Interface</div>
                 @if (auth()->user()->role == 'admin')
-                    <a class="nav-link" href="{{ url('alat-musik') }}">
-                        <div class="sb-nav-link-icon"><i class="fas fa-folder"></i></div>
-                        Alat Musik
+                    <a aria-controls="alatMusik" aria-expanded="false" class="nav-link collapsed"
+                        data-bs-target="#alatMusik" data-bs-toggle="collapse" href="#" id="s-alatMusik">
+                        <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                        Alat Musik Tradisional
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
-                    <a class="nav-link" href="{{ url('alat-musik/pakaian') }}">
-                        <div class="sb-nav-link-icon"><i class="fas fa-folder"></i></div>
-                        Pakaian Adat
+                    <div class="hidden s-alatMusik">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link" href="{{ url('alat-musik') }}">Alat Musik</a>
+                            <a class="nav-link" href="{{ url('alat-musik/kategory/1/create') }}">Kategori Alat Musik</a>
+                        </nav>
+                    </div>
+
+                    <a aria-controls="collapseLayouts" aria-expanded="false" class="nav-link collapsed"
+                        data-bs-target="#collapseLayouts" data-bs-toggle="collapse" href="#" id="s-pakayan">
+                        <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                        Pakaian Tradisional
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
-                    <a class="nav-link" href="{{ url('alat-musik/kategory/1/create') }}">
-                        <div class="sb-nav-link-icon"><i class="fas fa-folder"></i></div>
-                        Kategori Alat Musik
-                    </a>
-                    <a class="nav-link" href="{{ url('alat-musik/kategory/2/create') }}">
-                        <div class="sb-nav-link-icon"><i class="fas fa-folder"></i></div>
-                        Kategori Pakaian Adat
-                    </a>
+                    <div class="hidden s-pakayan">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link" href="{{ url('alat-musik/pakaian') }}">Pakaian Tradisional</a>
+                            <a class="nav-link" href="{{ url('alat-musik/kategory/2/create') }}">Kategori Pakaian
+                                Adat</a>
+                        </nav>
+                    </div>
+
+
                     <a class="nav-link" href="{{ url('used/list-permohonan') }}">
                         <div class="sb-nav-link-icon"><i class="fas fa-folder"></i></div>
                         List Permohonan
@@ -88,3 +100,34 @@
         </div>
     </nav>
 </div>
+
+
+@push('script')
+    <script>
+        // Hide elements with class 'hidden'
+        document.querySelectorAll('.hidden').forEach(function(element) {
+            element.style.display = 'none';
+        });
+
+        // Toggle visibility on click
+        document.getElementById('s-alatMusik').addEventListener('click', function() {
+            document.querySelectorAll('.s-alatMusik').forEach(function(element) {
+                if (element.style.display === 'none' || element.style.display === '') {
+                    element.style.display = 'block';
+                } else {
+                    element.style.display = 'none';
+                }
+            });
+        });
+
+        document.getElementById('s-pakayan').addEventListener('click', function() {
+            document.querySelectorAll('.s-pakayan').forEach(function(element) {
+                if (element.style.display === 'none' || element.style.display === '') {
+                    element.style.display = 'block';
+                } else {
+                    element.style.display = 'none';
+                }
+            });
+        });
+    </script>
+@endpush

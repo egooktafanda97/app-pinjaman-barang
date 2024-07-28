@@ -83,14 +83,14 @@
                                     <a class="text-blue-500"
                                         href="{{ url('user-used/profile') }}">{{ $item->borrower->name }}</a>
                                 </td>
-                                <td>{{ $item->instrument->name }}</td>
-                                <td>{{ $item->instrument->category->name }}</td>
-                                <td>{{ $item->qty }}</td>
-                                <td>{{ $item->borrowed_at }}</td>
-                                <td>{{ $item->returned_at }}</td>
+                                <td>{{ $item->instrument->name ?? '' }}</td>
+                                <td>{{ $item->instrument->category->name ?? '' }}</td>
+                                <td>{{ $item->qty ?? '' }}</td>
+                                <td>{{ $item->borrowed_at ?? '' }}</td>
+                                <td>{{ $item->returned_at ?? '' }}</td>
                                 <td class="">
                                     <div class="flex justify-center item-center align-center h-full cursor-pointer"
-                                        data-catatan="{{ $item->notes }}">
+                                        data-catatan="{{ $item->notes ?? '' }}">
                                         @if ($item->status == 'pending')
                                             <div class="text-xs px-3 inline bg-gray-200 text-gray-800 rounded-full"
                                                 style="padding-top: 0.1em; padding-bottom: 0.1rem">Menunggu Tanggapan</div>

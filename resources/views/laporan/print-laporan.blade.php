@@ -116,11 +116,11 @@
                     <td>
                         <a class="text-blue-500" href="{{ url('user-used/profile') }}">{{ $item->borrower->name }}</a>
                     </td>
-                    <td>{{ $item->instrument->name }}</td>
-                    <td>{{ $item->instrument->category->name }}</td>
-                    <td>{{ $item->qty }}</td>
-                    <td>{{ $item->borrowed_at }}</td>
-                    <td>{{ $item->returned_at }}</td>
+                    <td>{{ $item->instrument->name ?? '' }}</td>
+                    <td>{{ $item->instrument->category->name ?? '' }}</td>
+                    <td>{{ $item->qty ?? '' }}</td>
+                    <td>{{ $item->borrowed_at ?? '' }}</td>
+                    <td>{{ $item->returned_at ?? '' }}</td>
                     <td class="">
                         <div class="flex justify-center item-center align-center h-full cursor-pointer"
                             data-catatan="{{ $item->notes }}">
@@ -147,6 +147,17 @@
             @endforeach
         </tbody>
     </table>
+    <div style="margin-top: 100px">
+        {{-- ttd --}}
+        <div style="text-align: right; margin-right: 10px">
+            <p>Kuantan Singingi, {{ date('d F Y') }}</p>
+            <p>Kepala Dinas Kebudayaan dan Pariwisata</p>
+            <br><br><br>
+            <p><strong>Dr. H. M. Yusuf, M.Si</strong></p>
+            <p>Pembina Utama Muda</p>
+            <p>NIP. 19630315 198903 1 001</p>
+        </div>
+    </div>
     <script>
         window.print();
     </script>

@@ -67,7 +67,7 @@ class AlatMusikController extends Controller
             $img = Helper::Images($request, 'image', 'uploaded');
             $vidio = Helper::Images($request, 'video', 'uploaded');
             $audio = Helper::Images($request, 'audio', 'uploaded');
-            
+
 
             unset($xdata['video']);
             unset($xdata['image']);
@@ -186,15 +186,15 @@ class AlatMusikController extends Controller
             if ($request->id) {
                 $save = InstrumentCategory::whereId($request->id)->update($data);
                 Alert::success("Berhasil", "Data Berhasil Diubah");
-                return redirect("/alat-musik/kategory/".$request->types_id."/create");
+                return redirect("/alat-musik/kategory/" . $request->types_id . "/create");
             } else {
                 $save = InstrumentCategory::create($data);
                 Alert::success("Berhasil", "Data Berhasil Disimpan");
-                return redirect("/alat-musik/kategory/".$request->types_id."/create");
+                return redirect("/alat-musik/kategory/" . $request->types_id . "/create");
             }
         } catch (\Throwable $th) {
             Alert::error('Gagal', 'Data Gagal Disimpan');
-            return redirect("/alat-musik/kategory/".$request->types_id."/create");
+            return redirect("/alat-musik/kategory/" . $request->types_id . "/create");
         }
     }
 
@@ -206,10 +206,10 @@ class AlatMusikController extends Controller
             $data  = InstrumentCategory::find($id);
             InstrumentCategory::whereId($id)->delete();
             Alert::success("Berhasil", "Data Berhasil Dihapus");
-            return redirect("/alat-musik/kategory/".$data->types_id."/create");
+            return redirect("/alat-musik/kategory/" . $data->types_id . "/create");
         } catch (\Throwable $th) {
             Alert::error('Gagal', 'Data Gagal Dihapus');
-            return redirect("/alat-musik/kategory/".$data->types_id."/create");
+            return redirect("/alat-musik/kategory/" . $data->types_id . "/create");
         }
     }
 }
